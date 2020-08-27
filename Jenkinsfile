@@ -11,7 +11,7 @@ pipeline {
             }
         }
         stage('Test') {
-            steps { sh './mvnw check' }
+            steps { sh 'check' }
         }
     }
     post {
