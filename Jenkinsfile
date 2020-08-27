@@ -10,5 +10,13 @@ pipeline {
                 '''
             }
         }
+        stage('Test') {
+            steps { sh './mvnw check' }
+        }
+    }
+    post {
+        always {
+            junit 'build/reports/**/*.xml'
+        }
     }
 }
